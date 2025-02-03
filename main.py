@@ -5,8 +5,8 @@ def main():
     num_words = get_num_words(text)
     character_count = get_character_count(text_lc)
 
-    print("Amount of each character in the text:")
-    print(character_count)
+    get_report(character_count, num_words, book_path)
+    
 
 
 def get_book_text(path):
@@ -32,6 +32,15 @@ def get_lowercase_text(text):
 def get_num_words(text):
     words = text.split()
     return len(words)
+
+
+def get_report(chad, num_words, book_path):
+    print(f"--- Begin report of {book_path} ---")
+    print(f"{num_words} words found in the document")
+    for letter in chad:
+        if letter <= "z" and letter >= "a":
+            print(f"The '{letter}' character was found {chad[letter]} times")
+    print("--- End report ---")
 
 
 main()
